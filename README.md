@@ -1,4 +1,4 @@
-## topost
+## topmdt
 topmdt display client for all mdt on a lustre mds and sort them by open file and get attribute requests<br>
 It parse /proc/fs/lustre .... and read stats 2 times , calculate the bandwith used by each client, sort the client by usage<br>
 and print them.<br>
@@ -7,7 +7,7 @@ It use /etc/topmdt.conf to convert nid to hostname.<br>
 /etc/topmdt.conf must contain each lustre client and begin with word client.<br>
 Example :
 <pre>
-[root@oss0 ~]# cat /etc/topost.conf
+[root@oss0 ~]# cat /etc/topmdt.conf
 client=client1,123.45.31.2@o2ib1
 client=client2,123.45.31.3@o2ib1
 </pre>
