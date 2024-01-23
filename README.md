@@ -4,12 +4,6 @@ It parse /proc/fs/lustre .... and read stats 2 times , calculate the bandwith us
 and print them.<br>
 Example :
 <pre>
-# ./topmdt -h
-Usage : topmdt
-sans argument   : affiche les 10 clients les plus consommateurs
--n X            : limite l'affichage pour X client au max (10 par defaut)
--h              : pour afficher ce message d'aide
--v              : pour afficher la version
   
 # ./topmdt -v
 topmdt version 2.1
