@@ -1,7 +1,10 @@
 ## topmdt
-topmdt display lustre client and sort them by open file and get attribute requests<br>
+topmdt display client for all mdt on a lustre mds and sort them by open file and get attribute requests<br>
+It parse /proc/fs/lustre .... and read stats 2 times , calculate the bandwith used by each client, sort the client by usage<br>
+and print them.<br>
+It has been tested on lustre 2.7 with redhat 7.4<br>
 It use /etc/topmdt.conf to convert nid to hostname.<br>
-/etc/topmdt.conf must contain each lustre client with it nid.<br>
+/etc/topmdt.conf must contain each lustre client and begin with word client.<br>
 Example :
 <pre>
 [root@oss0 ~]# cat /etc/topmdt.conf

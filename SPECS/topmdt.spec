@@ -2,7 +2,7 @@
 
 %define name topmdt
 %define release 0%{?dist}
-%define version 1.1
+%define version 2.1
 %define buildroot %{_topdir}/BUILD/
 
 BuildRoot: %{buildroot}
@@ -12,7 +12,7 @@ Version: %{version}
 Release: %{release}
 Group: System
 License: GPL
-Packager: quentin.bouyer@gmail.com
+Packager: qbouyer@sgi.com
 Requires: glib2
 
 %description
@@ -41,3 +41,8 @@ rm -rf RPM_BUILD_ROOT/
 /usr/share/man/man1/topmdt.conf.1.gz
 /etc/topmdt.conf
 %dir
+%changelog
+* Tue Jan 16 2024 quentin.bouyer@gmail.com 2.1
+- count unlink
+* Fri Jan 12 2024 quentin.bouyer@gmail.com 2.0
+- no need topost.conf

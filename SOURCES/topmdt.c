@@ -12,11 +12,12 @@
 
 #include "topmdt.h"
 #include "affiche_mds.h"
-#include "read_conf_file.h"
 #include "initialize_mds.h"
 #include "li_stat.h"
-#include "traite_arg.h"
+#include "parse_arg.h"
 #include "compte_mdt.h"
+#include "compte_nid.h"
+#include "rempli_structure.h"
 
 // GLOBAL VAR
 
@@ -37,15 +38,14 @@ int main( int argc, char *argv[] )
 	//lecture des arguments
         parse_args (argc, argv);
 
-        printf ("%d clients max to display\n",nbaffich);
+        //printf ("%d clients max to display\n",nbaffich);
 
         // on cherche le nombre de mdt
         compte_mdt ();
         printf ("%d mdt\n",nummdt);
 
-	//lit conf file, quel mdt et combien de client
-	read_conf_file(0);
-	printf ("%d clients in /etc/topmdt.conf\n",numclient);
+	compte_nid();
+	printf("%d clients\n", numclient);
 
 	//donnes pour tous les clients de tous les mdt
  	iomds=malloc(numclient * nummdt * sizeof(*iomds));
@@ -53,8 +53,8 @@ int main( int argc, char *argv[] )
 	//pour stocker provisoirement addip et nom des clients
         nomip=malloc(numclient * sizeof(*nomip));
 
-	//lit conf file, rempli la structure d'un client
-	read_conf_file(1);
+        // rempli la structure d'un client
+        rempli_structure();
 
 	printf("First read\n");
 

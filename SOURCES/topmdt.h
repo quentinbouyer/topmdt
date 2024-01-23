@@ -6,8 +6,10 @@ typedef struct
  char nomhost[16];
  long openf;
  long getattrf;
+ long unlink;
  long opf;
  long getf;
+ long count_unlink;
 } io_mds;
 
 typedef struct
